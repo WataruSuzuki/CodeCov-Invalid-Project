@@ -3,7 +3,7 @@ name: Android Library Coverage Example
 on: [push, pull_request]
 
 jobs:
-  example-coverage:
+  coverage-junit:
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@v1
@@ -12,12 +12,6 @@ jobs:
       run: |
         cd Android-Project
         ./gradlew lib:testDebugUnitTest
-
-    - name: Run Espresso TEST
-      uses: ReactiveCircus/android-emulator-runner@v2.4.0
-      with:
-        api-level: 29
-        script: ./emulator.sh
 
     - name: Upload coverage report
       run: |
