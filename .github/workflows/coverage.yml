@@ -17,9 +17,7 @@ jobs:
       uses: ReactiveCircus/android-emulator-runner@v2.4.0
       with:
         api-level: 29
-        script: |
-          cd Android-Project
-          ./gradlew lib:connectedDebugAndroidTest
+        script: ./emulator.sh
 
     - name: Upload coverage report
       run: |
