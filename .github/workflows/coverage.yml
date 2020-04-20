@@ -1,0 +1,30 @@
+name: Android Library Coverage Example
+
+on: [push, pull_request]
+
+jobs:
+  example-coverage:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Run JUnit TEST
+      run: |
+        cd Android-Project
+        ./gradlew lib:testDebugUnitTest
+
+    - name: Run Espresso TEST
+      uses: ReactiveCircus/android-emulator-runner@v2.4.0
+      with:
+        api-level: 29
+        script: |
+          cd Android-Project
+          ./gradlew lib:connectedDebugAndroidTest
+
+    - name: Upload coverage report
+      run: |
+        cd Android-Project
+        ./gradlew jacocoMergedReport
+        bash <(curl -s https://codecov.io/bash) -f ./lib/build/reports/jacoco/jacocoMergedReport/jacocoMergedReport.xml
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
