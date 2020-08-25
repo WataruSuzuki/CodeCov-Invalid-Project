@@ -13,6 +13,12 @@ jobs:
         cd Android-Project
         ./gradlew lib:testDebugUnitTest
 
+    - name: Run Espresso TEST
+      uses: ReactiveCircus/android-emulator-runner@v2.4.0
+      with:
+        api-level: 29
+        script: ./emulator-lib.sh
+
     - name: Upload coverage report
       run: |
         cd Android-Project

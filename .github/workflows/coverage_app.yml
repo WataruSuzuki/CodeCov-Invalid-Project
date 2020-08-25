@@ -8,6 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: Run JUnit TEST
+      run: |
+        cd Android-Project
+        ./gradlew app:testDebugUnitTest
+
     - name: Run Espresso TEST
       uses: ReactiveCircus/android-emulator-runner@v2.4.0
       with:
