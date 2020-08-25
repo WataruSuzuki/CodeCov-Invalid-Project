@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import sample.jchankchan.lib.Fuga;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,10 +15,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static String methodForJunit() {
-        return "methodForJunit";
+        return Fuga.methodForJunit();
     }
 
     public String methodForEspresso() {
-        return "methodForEspresso";
+        return new Fuga().methodForEspresso();
     }
 }

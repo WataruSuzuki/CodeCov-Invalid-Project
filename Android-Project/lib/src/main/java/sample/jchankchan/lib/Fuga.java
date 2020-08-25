@@ -1,6 +1,6 @@
 package sample.jchankchan.lib;
 
-public class Hoge {
+public class Fuga {
     public static String methodForJunit() {
         return "methodForJunit";
     }

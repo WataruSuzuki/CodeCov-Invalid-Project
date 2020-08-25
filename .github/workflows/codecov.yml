@@ -1,6 +1,10 @@
 name: Android Library Coverage Example
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   coverage-espresso:
@@ -8,7 +12,23 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Run Espresso TEST
+    - name: Run lib's JUnit TEST
+      run: |
+        cd Android-Project
+        ./gradlew lib:testDebugUnitTest
+
+    - name: Run lib's Espresso TEST
+      uses: ReactiveCircus/android-emulator-runner@v2.4.0
+      with:
+        api-level: 29
+        script: ./emulator-lib.sh
+
+    - name: Run app's JUnit TEST
+      run: |
+        cd Android-Project
+        ./gradlew app:testDebugUnitTest
+
+    - name: Run app's Espresso TEST
       uses: ReactiveCircus/android-emulator-runner@v2.4.0
       with:
         api-level: 29
