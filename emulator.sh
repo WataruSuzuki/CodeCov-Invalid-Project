@@ -1,2 +1,2 @@
 cd Android-Project
-./gradlew app:connectedDebugAndroidTest
+./gradlew sampleapp:connectedDebugAndroidTest

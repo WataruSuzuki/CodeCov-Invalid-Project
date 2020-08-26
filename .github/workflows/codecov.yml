@@ -26,7 +26,7 @@ jobs:
     - name: Run app's JUnit TEST
       run: |
         cd Android-Project
-        ./gradlew app:testDebugUnitTest
+        ./gradlew sampleapp:testDebugUnitTest
 
     - name: Run app's Espresso TEST
       uses: ReactiveCircus/android-emulator-runner@v2.4.0
