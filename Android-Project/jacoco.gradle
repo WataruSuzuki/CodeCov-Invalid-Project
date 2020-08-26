@@ -39,7 +39,8 @@ task jacocoMergedReport(
                                  '**/Lambda.class',
                                  '**/*Lambda.class',
                                  '**/*Lambda*.class',
-                                 '**/*Lambda*.*'
+                                 '**/*Lambda*.*',
+                                 'sample/jchankchan/myapp/*.*'
             ]
             def javaDebugTree = fileTree(dir: "${buildDir}/intermediates/javac/${targetVariantName}/classes", excludes: excludeFilter)
             def kotlinDebugTree = fileTree(dir: "${buildDir}/tmp/kotlin-classes/${targetVariantName}", excludes: excludeFilter)

@@ -2,6 +2,8 @@ package sample.jchankchan.myapp;
 
 import org.junit.Test;
 
+import sample.jchankchan.lib.Fuga;
+
 import static org.junit.Assert.*;
 
 /**
@@ -12,6 +14,6 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void test_methodForJunit() {
-        assertEquals(MainActivity.methodForJunit(), "methodForJunit");
+        assertEquals(MainActivity.methodForJunit(), Fuga.methodForJunit());
     }
 }

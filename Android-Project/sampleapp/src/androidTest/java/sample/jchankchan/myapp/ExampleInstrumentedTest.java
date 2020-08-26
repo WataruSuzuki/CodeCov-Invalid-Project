@@ -6,6 +6,8 @@ import androidx.test.rule.ActivityTestRule;
 import org.junit.Rule;
 import org.junit.Test;
 
+import sample.jchankchan.lib.Fuga;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -20,6 +22,6 @@ public class ExampleInstrumentedTest {
 
     @Test
     public void test_methodForEspresso() {
-        assertEquals("methodForEspresso", rule.getActivity().methodForEspresso());
+        assertEquals(new Fuga().methodForEspresso(), rule.getActivity().methodForEspresso());
     }
 }
