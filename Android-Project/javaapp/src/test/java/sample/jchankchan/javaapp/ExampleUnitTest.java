@@ -1,4 +1,4 @@
-package sample.jchankchan.myapp;
+package sample.jchankchan.javaapp;
 
 import org.junit.Test;
 

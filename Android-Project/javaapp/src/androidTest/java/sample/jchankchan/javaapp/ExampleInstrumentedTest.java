@@ -1,4 +1,4 @@
-package sample.jchankchan.myapp;
+package sample.jchankchan.javaapp;
 
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;

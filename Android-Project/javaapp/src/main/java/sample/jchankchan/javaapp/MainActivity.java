@@ -1,4 +1,4 @@
-package sample.jchankchan.myapp;
+package sample.jchankchan.javaapp;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import sample.jchankchan.lib.Fuga;
 
 public class MainActivity extends AppCompatActivity {
-
     @VisibleForTesting
     Fuga fuga = new Fuga();
 
@@ -26,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         TextView espresso = findViewById(R.id.text_for_espresso);
         espresso.setText(methodForEspresso());
     }
+
 
     public static String methodForJunit() {
         return Fuga.methodForJunit();

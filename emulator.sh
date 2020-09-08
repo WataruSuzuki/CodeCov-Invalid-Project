@@ -1,2 +1,3 @@
 cd Android-Project
-./gradlew sampleapp:connectedDebugAndroidTest
+./gradlew javaapp:connectedDebugAndroidTest
+./gradlew lib:createDebugCoverageReport

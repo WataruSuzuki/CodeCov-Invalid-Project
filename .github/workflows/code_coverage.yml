@@ -19,23 +19,13 @@ jobs:
         chmod +x ./cc-test-reporter
         ./cc-test-reporter before-build
 
-    - name: Run lib's JUnit TEST
+    - name: Run JUnit TEST
       run: |
         cd Android-Project
         ./gradlew lib:testDebugUnitTest
+        ./gradlew javaapp:testDebugUnitTest
 
-    - name: Run lib's Espresso TEST
-      uses: ReactiveCircus/android-emulator-runner@v2.4.0
-      with:
-        api-level: 29
-        script: ./emulator-lib.sh
-
-    - name: Run app's JUnit TEST
-      run: |
-        cd Android-Project
-        ./gradlew sampleapp:testDebugUnitTest
-
-    - name: Run app's Espresso TEST
+    - name: Run Espresso TEST
       uses: ReactiveCircus/android-emulator-runner@v2.4.0
       with:
         api-level: 29
