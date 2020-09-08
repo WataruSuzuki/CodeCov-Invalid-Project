@@ -24,6 +24,7 @@ jobs:
         cd Android-Project
         ./gradlew lib:testDebugUnitTest
         ./gradlew javaapp:testDebugUnitTest
+        ./gradlew kotlinapp:testDebugUnitTest
 
     - name: Run Espresso TEST
       uses: ReactiveCircus/android-emulator-runner@v2.4.0
