@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         espresso.setText(methodForEspresso());
     }
 
-
     public static String methodForJunit() {
         return Fuga.methodForJunit();
     }

@@ -1,4 +1,4 @@
 include ':kotlinapp'
-include ':lib'
+include ':apps-common-lib'
 include ':javaapp'
 rootProject.name = "MyApp"

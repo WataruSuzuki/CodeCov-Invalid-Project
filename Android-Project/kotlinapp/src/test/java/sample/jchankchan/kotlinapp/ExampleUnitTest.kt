@@ -1,7 +1,8 @@
 package sample.jchankchan.kotlinapp
 
-import org.junit.Assert.assertEquals
+import org.junit.Assert
 import org.junit.Test
+import sample.jchankchan.kotlinapp.MainActivity.Companion.methodFromKotlinJunit
 import sample.jchankchan.lib.FooBar
 
 /**
@@ -11,7 +12,7 @@ import sample.jchankchan.lib.FooBar
  */
 class ExampleUnitTest {
     @Test
-    fun test_methodFromKotlinJunit() {
-        assertEquals(MainActivity.methodFromKotlinJunit(), FooBar.methodFromKotlinJunit())
+    fun test_methodForJunit() {
+        Assert.assertEquals(methodFromKotlinJunit(), FooBar.methodFromKotlinJunit())
     }
 }

@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
+        @JvmStatic
         fun methodFromKotlinJunit(): String? {
             return FooBar.methodFromKotlinJunit()
         }

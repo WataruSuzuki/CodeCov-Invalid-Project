@@ -27,7 +27,7 @@ jobs:
     - name: Run JUnit TEST
       run: |
         cd Android-Project
-        ./gradlew lib:testDebugUnitTest
+        ./gradlew apps-common-lib:testDebugUnitTest
         ./gradlew javaapp:testDebugUnitTest
         ./gradlew kotlinapp:testDebugUnitTest
 
@@ -45,15 +45,15 @@ jobs:
     - name: Upload coverage report to CodeCov
       run: |
         cd Android-Project
-        bash <(curl -s https://codecov.io/bash) -f "./lib/build/reports/jacoco/jacocoMergedReport/jacocoMergedReport.xml"
+        bash <(curl -s https://codecov.io/bash) -f "./apps-common-lib/build/reports/jacoco/jacocoMergedReport/jacocoMergedReport.xml"
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Upload coverage report to Code Climate
       run: |
         cd Android-Project
-        cp lib/build/reports/jacoco/jacocoMergedReport/jacocoMergedReport.xml jacoco.xml
-        JACOCO_SOURCE_PATH="lib/src/main/java" ./cc-test-reporter format-coverage jacoco.xml --input-type jacoco
+        cp apps-common-lib/build/reports/jacoco/jacocoMergedReport/jacocoMergedReport.xml jacoco.xml
+        JACOCO_SOURCE_PATH="apps-common-lib/src/main/java" ./cc-test-reporter format-coverage jacoco.xml --input-type jacoco
         ./cc-test-reporter upload-coverage
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
